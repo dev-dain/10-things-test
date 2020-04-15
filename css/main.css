@@ -31,6 +31,7 @@ body {
     background: linear-gradient(to right,  #eafffc 0%,#f0e8ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eafffc', endColorstr='#f0e8ff',GradientType=1 ); /* IE6-9 */
 }
+/* qna에서 display: none; */
 #wrap {
     width: 100%;
     max-width: 100%;
@@ -39,6 +40,7 @@ body {
     overflow: hidden;
     margin-top: 50px;
 }
+/* qna에서 display: none; */
 #header {
     width: 100%;
     height: 50px;
@@ -146,6 +148,7 @@ body {
     animation-play-state: running;
 }
     
+/* qna로 넘어갈 때 display: block; */
 #qna {
     /*display: none;*/
 }
@@ -189,7 +192,8 @@ body {
 }
 .a {
     cursor: pointer;
-    margin: 20px 0 auto;
+    margin: 0 auto;
+    margin-top: 20px;
     transition: all 0.2s linear;
 }
 .a:hover {
@@ -201,8 +205,9 @@ body {
     display: none;
 }
 
+/* result로 넘어갈 때 display: block; */
 #result {
-    /* display: none; */
+    /*display: none;*/
     background: rgb(252, 252, 252);
     box-shadow: #ddd 0px 0px 10px 5px;
     min-height: 100vh;
@@ -237,21 +242,27 @@ body {
     height: 50px;
     border-radius: 50px;
 }
-.emoji {
+.art {
     height: 600px;
     width: 100%;
     box-shadow: #ddd 0px 0px 10px 5px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 .desc {
-    margin: 20px 10% 0 10%;
-    width: 80%;
+    margin: 30px 5% 80px 5%;
+    width: 90%;
     font-size: 15.4px;
     font-size: 1.1rem;
     font-weight: 350;
     line-height: 25.2px;
     line-height: 1.8rem;
-    margin-bottom: 120px;
+}
+hr {
+    margin: 20px 0 10px 0;
+    border: 1.5px dashed #222;
+}
+#intro-box {
+    padding-top: 60px;
 }
 .pro_pic {
     background-image: url('../img/gyeoly.jpg');
@@ -260,7 +271,7 @@ body {
     height: 60px;
     border-radius: 50%;
     margin: 0 auto;
-    opacity: 0.6;
+    opacity: 0.7;
     transition: opacity 0.2s ease-out;
 }
 .pro_pic:hover {
@@ -272,44 +283,46 @@ body {
     font-size: 1.7rem;
     font-weight: bolder;
 }
-.art-intro {
-    width: 80%;
-    margin: 0 10% 30px 10%;
-    font-size: 16.8px;
-    font-size: 1.2rem;
-    font-weight: 300;
+.artist {
+    margin: 0 5% 30px 5%;
 }
-.art-sns {
+.btn {
     box-sizing: border-box;
     width: 40%;
     height: 50px;
     margin: 0 30%;
     background: rgba(167, 105, 218, 0.7);
     border-radius: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     padding: 15px 0;
-    font-weight: 600;
+    font-weight: 500;
     transition: background-color 0.2s ease-in-out;
 }
-.art-sns > a {
+.btn > a {
     display: inline-block;
-    color: #eee;
+    color: #fff;
     min-width: 100%;
     min-height: 100%;
+}
+.art-sns {
+    margin-bottom: 30px;
 }
 .art-sns:hover {
     background: rgba(167, 105, 218, 1.0);
 }
-#intro-box + p {
-    font-size: 18.2px;
-    font-size: 1.3rem;
+#intro-box ~ p {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 21px;
+    font-size: 1.5rem;
     font-weight: bolder;
 }
 #share-box {
-    margin: 25px 10% 0 10%;
+    box-sizing: border-box;
     width: 80%;
+    margin: 25px 10% 30px 10%;
     background: #222;
-    height: 40px;
+    height: 50px;
     border-radius: 40px;
     padding: 10px;
 }
@@ -350,7 +363,12 @@ body {
     https://forhappywomen.com/archives/3015
     */
 }
+.go-origin {
+    margin: 30px 10% 0 10%;
+    width: 80%;
+}
 
+/* qna로 넘어갈 때 display: none; */
 #footer {
     z-index: 10;
     background: rgb(252, 252, 252);
@@ -400,6 +418,7 @@ body {
 }
 
 @media all and (min-width: 768px) {
+    /* qna에서 margin-top을 없애야 함 */
     #wrap {
         margin-top: 115px;
     }
@@ -494,9 +513,19 @@ body {
     .a {
         margin: 30px auto;
     }
+    .desc {
+        font-size: 16.8px;
+        font-size: 1.2rem;
+        line-height: 28px;
+        line-height: 2rem;
+    }
+    .artist {
+        margin-bottom: 40px;
+    }
 }
 
 @media all and (min-width: 1024px) {
+    /* qna에서 margin-top을 없애야 함 */
     #wrap {
         margin-top: 150px;
     }
@@ -580,5 +609,22 @@ body {
     .answer {
         font-size: 25.2px;
         font-size: 1.8rem;
+    }
+    .desc {
+        font-size: 18.2px;
+        font-size: 1.3rem;
+        line-height: 29.4px;
+        line-height: 2.1rem;
+    }
+}
+
+@media all and (min-width: 1440px) {
+    .desc {
+        width: 80%;
+        margin: 30px 10% 80px 10%;
+        font-size: 19.6px;
+        font-size: 1.4rem;
+        line-height: 30.8px;
+        line-height: 2.2rem;
     }
 }
