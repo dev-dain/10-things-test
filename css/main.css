@@ -207,6 +207,7 @@ body {
     box-shadow: #ddd 0px 0px 10px 5px;
     min-height: 100vh;
     text-align: center;
+    transition: all 0.5s ease-in-out;
 }
 #score-box {
     margin-bottom: 50px;
@@ -243,8 +244,8 @@ body {
     margin-bottom: 50px;
 }
 .desc {
-    margin-top: 20px;
-    width: 100%;
+    margin: 20px 10% 0 10%;
+    width: 80%;
     font-size: 15.4px;
     font-size: 1.1rem;
     font-weight: 350;
