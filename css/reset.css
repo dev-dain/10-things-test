@@ -1,7 +1,7 @@
 html, body { 
     overflow-x: hidden;
 }    
-body {
+body, p {
     margin: 0;
     padding: 0;
     line-height: 1;

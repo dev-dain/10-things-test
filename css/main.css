@@ -2,72 +2,88 @@
 * {
   font-family: 'Spoqa Han Sans', 'Sans-serif';
 }
-body {
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eafffc+0,f0e8ff+100 */
-background: #eafffc; /* Old browsers */
-background: -moz-linear-gradient(left,  #eafffc 0%, #f0e8ff 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  #eafffc 0%,#f0e8ff 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  #eafffc 0%,#f0e8ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eafffc', endColorstr='#f0e8ff',GradientType=1 ); /* IE6-9 */
+
+/* animation */
+@keyframes flicker {
+    0% {background-color: rgba(0, 135, 245, 0.9);}
+    50% {background-color: rgba(0, 135, 245, 0.6);}
+    100% {background-color: rgba(0, 135, 245, 0.9);}
+   }
+    
+@-webkit-keyframes flicker {
+    0% {background-color: rgba(0, 135, 245, 0.9);}
+    50% {background-color: rgba(0, 135, 245, 0.6);}
+    100% {background-color: rgba(0, 135, 245, 0.9);}
 }
 
+/* style */
+body {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eafffc+0,f0e8ff+100 */
+    background: #eafffc; /* Old browsers */
+    background: -moz-linear-gradient(left,  #eafffc 0%, #f0e8ff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #eafffc 0%,#f0e8ff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #eafffc 0%,#f0e8ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eafffc', endColorstr='#f0e8ff',GradientType=1 ); /* IE6-9 */
+}
 #wrap {
     width: 100%;
     max-width: 100%;
     min-height: 100%;
     position: relative;
     overflow: hidden;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 #header {
     width: 100%;
-    height: 100px;
+    height: 50px;
     position: fixed;
     top: 0; left: 0;
     box-sizing: border-box;
-    padding: 15px;
+    margin: 0 auto;
+    padding: 5px;
     background:rgb(252, 252, 252);
     box-shadow: #ddd 0 0 10px 5px;
+    z-index: 10;
 }
 .logo {
     display: inline-block;
     background-repeat: none;
     background-position: center;
-    background-image: url("../img/logo.png");
     background-size: cover;
     font-size: 0;
-    width: 70px;
-    height: 70px;
-    position: fixed;
-    left: 50%; top: 15px;
-    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    /* 웹사이트로 이동하게..*/
     transition: opacity 0.5s;
     opacity: 0.8;
 }
 .logo:hover {
     opacity: 1;
 }
-
+.head {
+    background-image: url("../img/logo.png");
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}
+    
 #welcome {
     box-sizing: border-box;
-    min-width: 70%;
-    width: 70%;
-    padding: 180px 10% 50px 10%;
-    min-height: 82vh;
+    min-width: 90%;
+    width: 90%;
+    padding: 40px 5% 25px 5%;
+    min-height: 100vh;
     margin: 0 auto;
     background: rgb(252, 252, 252);
-    box-shadow: #ddd 1px 5px 3px 3px;
+    box-shadow: #ddd 0px 0px 10px 5px;
     transition: all 0.5s ease-in-out;
 }
 #title-box {
     text-align: center;
 }
-
 #title-box > div {
-    margin: 20px 0 auto;
+    margin: 10px 0 auto;
 }
 #title-box > div:first-child {
     margin-top: 0px;
@@ -75,46 +91,53 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eafffc', end
 #title-box > div:last-child {
     margin-bottom: 0px;
 }
-
 .title {
-    font-size: 3.7rem;
+    font-size: 35px;
+    font-size: 2.5rem;
     font-weight: bolder;
+    letter-spacing: -3px;
     letter-spacing: -0.2rem;
-    line-height: 5rem;
+    line-height: 42px;
+    line-height: 3rem;
 }
 .sec-tit {
-    font-size: 2.5rem;
+    font-size: 21px;
+    font-size: 1.5rem;
     font-weight: lighter;
-    letter-spacing: 0.5rem;
-    line-height: 3.5rem;
+    letter-spacing: 6.4px;
+    letter-spacing: 0.4rem;
+    line-height: 30.8px;
+    line-height: 2.2rem;
 }
 
 .start-wrap {
-    width: 100%;
-    position: fixed;
-    bottom: 120px;
+    margin-top: 50px;
+    width: 90%;
+    left: 5%;
+    transform: translateX(5%);
 }
 .start {
+    background-color: rgba(0, 135, 245, 0.9);
     box-sizing: border-box;
-    width: 50%;
-    height: 100px;
+    min-width: 90%;
+    height: 60px;
     border-radius: 50px;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     color: #fff;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 28px;
+    font-size: 2rem;
     animation: flicker 2.5s infinite;
     cursor: pointer;
-}
-
+}  
 .start:hover {
     animation-play-state: paused;
 }
 .start:active {
     animation-play-state: running;
 }
-
+    
 #qna {
     display: none;
 }
@@ -128,30 +151,177 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eafffc', end
 }
 
 #footer {
+    z-index: 10;
     background: rgb(252, 252, 252);
     width: 100%;
-    height: 70px;
+    height: 60px;
+    padding: 10px 25px;
     box-sizing: border-box;
-    padding: 15px 30px 0 30px;
     font-weight: lighter;
     box-shadow: #ddd 0 0 15px 2px;
-    text-align: center;
 }
-
 .highlight {
     color: rgb(87, 58, 189);
     font-weight: bolder;
 }
+.foot {
+    margin: 5px;
+    width: 25px;
+    height: 25px;
+}
+.github {
+    float: right;
+    background-image: url("../img/github-logo.png");
+}
+.tistory {
+    float: right;
+    background-image: url("../img/tistory-logo.svg");
+    /*
+        로고 출처 : https://marshall-ku.tistory.com/134
+        감사합니다!!
+    */
+}
 
-/* animation */
-@keyframes flicker {
-    0% {background-color: rgba(0, 135, 245, 0.6);}
-    50% {background-color: rgba(0, 135, 245, 0.9);}
-    100% {background-color: rgba(0, 135, 245, 0.6);}
-   }
+/* media query */
+@media all and (min-width: 486px) {
+    .title {
+        font-size: 44.8px;
+        font-size: 3.2rem;
+        line-height: 64px;
+        line-height: 4rem;
+    }
+    .sec-tit {
+        font-size: 28px;
+        font-size: 2rem;
+        line-height: 49.2px;
+        line-height: 3.3rem;
+    }
+}
+
+@media all and (min-width: 768px) {
+    #wrap {
+        margin-top: 115px;
+    }
+    #header {
+        width: 80%;
+        height: 80px;
+        margin: 0 10%;
+        padding: 12.5px;
+        border-radius: 12.5px;
+    }
+    .logo {
+        width: 55px;
+        height: 55px;
+    }
+    #welcome {
+        min-width: 80%;
+        width: 80%;
+        padding: 75px 5% 37.5px 5%;
+        border-radius: 20px;
+    }
+    #title-box > div {
+        margin: 70px 0 auto;
+    }
+    .title {
+        font-size: 51.8px;
+        font-size: 3.7rem;
+        line-height: 70px;
+        line-height: 5rem;
+    }
+    .sec-tit {
+        font-size: 35px;
+        font-size: 2.5rem;
+        font-weight: lighter;
+        letter-spacing: 7px;
+        letter-spacing: 0.5rem;
+        line-height: 56px;
+        line-height: 4rem;
+    }
+    .start-wrap {
+        margin-top: 100px;
+        width: 80%;
+        left: 12.5%;
+        transform: translateX(12.5%);
+    }
+    .start {
+        min-width: 80%;
+        height: 100px;
+        padding: 20px;
+        font-size: 42px;
+        font-size: 3rem;
+    }
+    #footer {
+        margin: 40px 10% 0 10%;
+        width: 80%;
+        height: 80px;
+        padding: 15px 30px;
+        border-radius: 20px;
+    }
+    .foot {
+        margin: 5px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    #wrap {
+        margin-top: 150px;
+    }
+    #header {
+        width: 70%;
+        height: 100px;
+        margin: 0 15%;
+        padding: 15px;
+    }
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+    #welcome {
+        min-width: 70%;
+        width: 70%;
+        padding: 100px 2.5% 50px 2.5%;
+    }
+    #title-box > div {
+        margin: 90px 0 auto;
+    }
+    .title {
+        font-size: 58.8px;
+        font-size: 4.2rem;
+        line-height: 77px;
+        line-height: 5.5rem;
+    }
+    .sec-tit {
+        font-size: 35px;
+        font-size: 2.5rem;
+        font-weight: lighter;
+        line-height: 49px;
+        line-height: 3.5rem;
+    }
     
-@-webkit-keyframes flicker {
-    0% {background-color: rgba(0, 135, 245, 0.6);}
-    50% {background-color: rgba(0, 135, 245, 0.9);}
-    100% {background-color: rgba(0, 135, 245, 0.6);}
+    .start-wrap {
+        margin-top: 100px;
+        width: 70%;
+        left: 20%;
+        transform: translateX(20%);
+    }
+    .start {
+        min-width: 70%;
+        height: 120px;
+        padding: 30px;
+        font-size: 49px;
+        font-size: 3.5rem;
+    }
+    #footer {
+        margin: 50px 15% 0 15%;
+        width: 70%;
+        height: 100px;
+        padding: 25px 30px;
+    }
+    .foot {
+        margin: 5px;
+        width: 40px;
+        height: 40px;
+    }
 }
