@@ -326,7 +326,7 @@ hr {
     border-radius: 40px;
     padding: 10px;
 }
-#share-box > span {
+#share-box span {
     display: inline-block;
     margin-right: 5px;
     border-radius: 50%;
@@ -334,13 +334,6 @@ hr {
     height: 30px;
     background-size: cover;
     cursor: pointer;
-}
-.ig {
-    background-image: url('../img/ig.svg');
-    /* 
-    자료 출처
-    https://ko.m.wikipedia.org/wiki/%ED%8C%8C%EC%9D%BC:Instagram_logo_2016.svg
-    */
 }
 .tw {
     background-image: url('../img/tw.svg');
@@ -379,14 +372,20 @@ hr {
     font-weight: lighter;
     box-shadow: #ddd 0 0 15px 2px;
 }
+#footer > div {
+    box-sizing: border-box;
+    height: 30px;
+    margin: 10px 0;
+    float: left;
+}
 .highlight {
     color: rgb(87, 58, 189);
     font-weight: bolder;
 }
 .foot {
     margin: 5px;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
 }
 .github {
     float: right;
@@ -522,6 +521,19 @@ hr {
     .artist {
         margin-bottom: 40px;
     }
+    #share-box {
+        width: 40%;
+        margin: 25px 30% 30px 30%;
+    }
+    .go-origin {
+        width: 40%;
+        margin: 30px 30% 0 30%;
+    }
+    #footer > div {
+        box-sizing: border-box;
+        height: 30px;
+        margin: 20px 0;
+    }
 }
 
 @media all and (min-width: 1024px) {
@@ -615,6 +627,24 @@ hr {
         font-size: 1.3rem;
         line-height: 29.4px;
         line-height: 2.1rem;
+    }
+    hr {
+        width: 90%;
+        margin: 20px 5% 10px 5%;
+    }
+    .btn {
+        width: 30%;
+        margin: 0 35%;
+    }
+    .art-sns {
+        margin-bottom: 40px;
+    }
+    #share-box {
+        width: 30%;
+        margin: 25px 35% 30px 35%;
+    }
+    .go-origin {
+        margin: 30px 35% 0 35%;
     }
 }
 
