@@ -10,19 +10,56 @@
 }
 
 /* animation */
-@keyframes flicker {
-    0% {background-color: rgba(0, 135, 245, 0.9);}
-    50% {background-color: rgba(0, 135, 245, 0.6);}
-    100% {background-color: rgba(0, 135, 245, 0.9);}
-   }
-    
-@-webkit-keyframes flicker {
+@-webkit-keyframes start-flicker {
     0% {background-color: rgba(0, 135, 245, 0.9);}
     50% {background-color: rgba(0, 135, 245, 0.6);}
     100% {background-color: rgba(0, 135, 245, 0.9);}
 }
+@keyframes start-flicker {
+    0% {background-color: rgba(0, 135, 245, 0.9);}
+    50% {background-color: rgba(0, 135, 245, 0.6);}
+    100% {background-color: rgba(0, 135, 245, 0.9);}
+}
+@-webkit-keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@-webkit-keyframes fade-out {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+@keyframes fade-out {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes going-up {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-10px);}
+}
+@keyframes going-up {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-10px);}
+}
+@-webkit-keyframes going-down {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(10px);}
+}
+@keyframes going-down {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(10px);}
+}
+@keyframes working {
+    0% {width: 0%;}
+    50% {width: 40%;}
+    100% {width: 100%;}
+}
 
 /* style */
+
 body {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eafffc+0,f0e8ff+100 */
     background: #eafffc; /* Old browsers */
@@ -52,6 +89,7 @@ body {
     background:rgb(252, 252, 252);
     box-shadow: #ddd 0 0 10px 5px;
     z-index: 10;
+    animation: fade-in 0.3s ease-in-out;
 }
 .logo {
     display: inline-block;
@@ -80,9 +118,8 @@ body {
     box-sizing: border-box;
     min-width: 90%;
     width: 90%;
-    padding: 40px 5% 25px 5%;
+    padding: 20px 5% 25px 5%;
     margin: 0 auto;
-    transition: all 0.5s ease-in-out;
 }
 #welcome {
     background: rgb(252, 252, 252);
@@ -91,6 +128,8 @@ body {
 }
 #title-box {
     text-align: center;
+    animation: fade-in 0.5s ease-out 0.3s both, 
+            going-down 0.5s ease-out 0.3s both;
 }
 #title-box > div {
     margin: 10px 0 auto;
@@ -119,12 +158,43 @@ body {
     line-height: 30.8px;
     line-height: 2.2rem;
 }
-
+.time-logo {
+    display: inline-block;
+    background-image: url('../img/clock.png');
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+    /*
+    자료 출처
+    https://commons.wikimedia.org/wiki/File:Alarms_%26_Clock_icon.png
+    */
+}
+.time-logo + div {
+    font-weight: lighter;
+    letter-spacing: -0.5px;
+}
+#title-box + input {
+    width: 60%;
+    height: 40px;
+    margin: 20px 20% 30px 20%;
+    border-radius: 20px;
+    border: 1px #ddd solid;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 16.8px;
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fade-in 0.4s ease-out 0.9s both, 
+            going-down 0.4s ease-out 0.9s both;
+}
+.check-name {
+    text-align: center;
+}
 .start-wrap {
-    margin-top: 50px;
+    margin: 15px 5% 0 5%;
     width: 90%;
-    left: 5%;
-    transform: translateX(5%);
 }
 .start {
     background-color: rgba(0, 135, 245, 0.9);
@@ -132,14 +202,16 @@ body {
     min-width: 90%;
     height: 60px;
     border-radius: 50px;
-    padding: 10px;
+    line-height: 60px;
     text-align: center;
     color: #fff;
     font-weight: 600;
     font-size: 28px;
     font-size: 2rem;
-    animation: flicker 2.5s infinite;
     cursor: pointer;
+    animation: fade-in 0.5s ease-out 1.4s both, 
+            going-down 0.5s ease-out 1.4s both,
+            start-flicker 2.5s infinite;
 }  
 .start:hover {
     animation-play-state: paused;
@@ -154,13 +226,14 @@ body {
 }
 .status-bar {
     width: 90%;
-    margin: 0 auto;
+    margin: 0 5%;
     height: 10px;
     background: transparent;
     border-radius: 20px;
     margin-bottom: 20px;
     border: 3px solid #ddd;
     background: #fff;
+    animation: fade-in 0.3s ease-in-out;
 }
 .status {
     /* 임시 */
@@ -170,7 +243,7 @@ body {
     border-radius: 20px;
 }
 .box {
-    margin: 0 auto;
+    margin: 0 5%;
     width: 90%;
     background: rgb(252, 252, 252);
     box-shadow: #ddd 0px 0px 10px 5px;
@@ -182,27 +255,101 @@ body {
     font-size: 23.8px;
     font-size: 1.7rem;
     font-weight: bolder;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fade-in 0.5s ease-in-out 0.3s forwards;
 }
 .answer {
     margin: 0 auto;
     font-size: 18.2px;
     font-size: 1.3rem;
     font-weight: bolder;
+    opacity: 0;
+    animation: fade-in 0.4s linear 0.8s forwards;
 }
 .a {
     cursor: pointer;
     margin: 0 auto;
     margin-top: 20px;
-    transition: all 0.2s linear;
 }
 .a:hover {
     background: #222;
     color: #eee;
 }
-
+/* calc로 넘어갈 때 display: block; */
 #calc {
-    display: none;
+    /*display: none;*/
+}
+.calc-bar {
+    width: 70%;
+    height: 9vh;
+    box-sizing: border-box;
+    margin: 35vh 15vw 20px 15vw;
+    background: #222;
+    border-radius: 10px;
+    line-height: 9vh;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    text-align: center;
+    position: relative;
+    letter-spacing: 1.3rem;
+}
+.calc-bar > .calc {
+    width: 0%;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#57a0db+1,e577c4+100 */
+    background: #57a0db; /* Old browsers */
+    background: -moz-linear-gradient(left,  #57a0db 1%, #e577c4 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #57a0db 1%,#e577c4 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #57a0db 1%,#e577c4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57a0db', endColorstr='#e577c4',GradientType=1 ); /* IE6-9 */
+    /* animation을 나중에 붙여야 함 */
+    animation: working 7s forwards;
+    border-radius: 10px;
+    position: absolute;
+    top: 0; left: 0;
+    width: 0%;
+    height: 100%;
+}
+.wait {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 2rem;
+}
+.calc-bar {
+    width: 70%;
+    height: 9vh;
+    box-sizing: border-box;
+    margin: 25vh 15vw 35px 15vw;
+    background: #222;
+    border-radius: 12px;
+    line-height: 9vh;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    text-align: center;
+    position: relative;
+    letter-spacing: 1.3rem;
+}
+.calc-bar > .calc {
+    position: absolute;
+    top: 0; left: 0;
+    width: 0%;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#57a0db+1,e577c4+100 */
+    background: #57a0db; /* Old browsers */
+    background: -moz-linear-gradient(left,  #57a0db 1%, #e577c4 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #57a0db 1%,#e577c4 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #57a0db 1%,#e577c4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57a0db', endColorstr='#e577c4',GradientType=1 ); /* IE6-9 */
+    animation: working 7s forwards;
+    border-radius: 10px;
+}
+.wait {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 2rem;
 }
 
 /* result로 넘어갈 때 display: block; */
@@ -212,16 +359,23 @@ body {
     box-shadow: #ddd 0px 0px 10px 5px;
     min-height: 100vh;
     text-align: center;
-    transition: all 0.5s ease-in-out;
 }
 #score-box {
     margin-bottom: 50px;
+}
+#score-box > .title {
+    opacity: 0;
+    animation: fade-in 0.6s ease-out 0.4s forwards, 
+            going-down 0.6s ease-out 0.4s forwards;
 }
 #score-box > .score {
     margin: 10px 0 50px 0;
     font-size: 56px;
     font-size: 4rem;
     font-weight: bolder;
+    opacity: 0;
+    animation: fade-in 0.6s ease-out 1.8s forwards, 
+            going-down 0.6s ease-out 1.8s forwards;
 }
 .pin {
     background-image: url('../img/down-pin.png');
@@ -230,6 +384,9 @@ body {
     height: 30px;
     /* margin 나중에 지우기 */
     margin-left: 44%;
+    opacity: 0;
+    animation: fade-in 0.5s ease-out 2.6s forwards, 
+            going-down 0.5s ease-out 2.6s forwards;
 }
 .score-bar {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#6fb7e8+0,855299+50,af3838+100 */
@@ -241,12 +398,18 @@ body {
     width: 100%;
     height: 50px;
     border-radius: 50px;
+    opacity: 0;
+    animation: fade-in 0.5s ease-out 2.5s forwards, 
+            going-down 0.5s ease-out 2.5s forwards;
 }
 .art {
     height: 600px;
     width: 100%;
     box-shadow: #ddd 0px 0px 10px 5px;
     margin-bottom: 40px;
+    opacity: 0;
+    animation: fade-in 0.3s ease-out 3.2s both, 
+            going-down 0.3s ease-out 3.2s both;
 }
 .desc {
     margin: 30px 5% 80px 5%;
@@ -298,6 +461,9 @@ hr {
     font-weight: 500;
     transition: background-color 0.2s ease-in-out;
 }
+.btn:hover {
+    background: rgba(167, 105, 218, 1.0);
+}
 .btn > a {
     display: inline-block;
     color: #fff;
@@ -306,9 +472,6 @@ hr {
 }
 .art-sns {
     margin-bottom: 30px;
-}
-.art-sns:hover {
-    background: rgba(167, 105, 218, 1.0);
 }
 #intro-box ~ p {
     display: inline-block;
@@ -356,6 +519,26 @@ hr {
     https://forhappywomen.com/archives/3015
     */
 }
+.caution {
+    padding: 20px 5%;
+}
+.caution > p {
+    line-height: 21px;
+    line-height: 1.5rem;
+    font-weight: 400;
+}
+.caution > p > a {
+    font-weight: bolder;
+    color: rgba(94, 134, 255, 0.8);
+    transition: all 0.2s linear;
+}
+.caution > p > a:hover {
+    color: rgba(94, 134, 255, 1.0);
+}
+.hash {
+    font-weight: bold;
+    color: rgba(0, 135, 245);
+}
 .go-origin {
     margin: 30px 10% 0 10%;
     width: 80%;
@@ -371,6 +554,7 @@ hr {
     box-sizing: border-box;
     font-weight: lighter;
     box-shadow: #ddd 0 0 15px 2px;
+    animation: fade-in 0.3s ease-in-out;
 }
 #footer > div {
     box-sizing: border-box;
@@ -435,11 +619,14 @@ hr {
     .container {
         min-width: 80%;
         width: 80%;
-        padding: 90px 5% 37.5px 5%;
+        padding: 60px 5% 37.5px 5%;
         border-radius: 20px;
     }
     #title-box > div {
-        margin: 70px 0 auto;
+        margin: 30px 0 auto;
+    }
+    #title-box > div:last-of-type {
+        margin: 20px 0 auto;
     }
     .title {
         font-size: 51.8px;
@@ -456,16 +643,19 @@ hr {
         line-height: 56px;
         line-height: 4rem;
     }
+    #title-box + input {
+        width: 40%;
+        margin: 40px 30% 0 30%;
+        height: 50px;
+    }
     .start-wrap {
-        margin-top: 100px;
-        width: 80%;
-        left: 12.5%;
-        transform: translateX(12.5%);
+        width: 60%;
+        margin: 50px 20% 50px 20%;
     }
     .start {
         min-width: 80%;
         height: 100px;
-        padding: 20px;
+        line-height: 100px;
         font-size: 42px;
         font-size: 3rem;
     }
@@ -481,11 +671,17 @@ hr {
         width: 35px;
         height: 35px;
     }
+    #footer > div {
+        box-sizing: border-box;
+        height: 30px;
+        margin: 20px 0;
+    }
     #qna {
         /*display: none;*/
     }
     .status-bar {
         width: 80%;
+        margin: 0px 10% 20px 10%;
     }
     .status {
         /* 임시 */
@@ -512,6 +708,15 @@ hr {
     .a {
         margin: 30px auto;
     }
+    .calc-bar {
+        width: 60%;
+        margin: 25vh 20vw 40px 20vw;
+    }
+    .wait {
+        text-align: center;
+        font-weight: lighter;
+        font-size: 2.2rem;
+    }
     .desc {
         font-size: 16.8px;
         font-size: 1.2rem;
@@ -529,10 +734,14 @@ hr {
         width: 40%;
         margin: 30px 30% 0 30%;
     }
-    #footer > div {
-        box-sizing: border-box;
-        height: 30px;
-        margin: 20px 0;
+    .caution {
+        padding: 20px 7.5%;
+    }
+    .caution > p {
+        font-size: 15.4px;
+        font-size: 1.1rem;
+        line-height: 23.8px;
+        line-height: 1.7rem;
     }
 }
 
@@ -554,10 +763,10 @@ hr {
     .container {
         min-width: 70%;
         width: 70%;
-        padding: 100px 2.5% 50px 2.5%;
+        padding: 100px 2.5% 30px 2.5%;
     }
     #title-box > div {
-        margin: 90px 0 auto;
+        margin: 60px 0 auto;
     }
     .title {
         font-size: 58.8px;
@@ -571,18 +780,14 @@ hr {
         font-weight: lighter;
         line-height: 49px;
         line-height: 3.5rem;
-    }
-    
+    } 
     .start-wrap {
-        margin-top: 100px;
-        width: 70%;
-        left: 20%;
-        transform: translateX(20%);
+        margin-top: 60px;
     }
     .start {
         min-width: 70%;
-        height: 120px;
-        padding: 30px;
+        height: 100px;
+        line-height: 100px;
         font-size: 49px;
         font-size: 3.5rem;
     }
@@ -602,6 +807,7 @@ hr {
     }
     .status-bar {
         width: 70%;
+        margin: 0px 15% 40px 15%;
     }
     .status {
         /* 임시 */
@@ -621,6 +827,15 @@ hr {
     .answer {
         font-size: 25.2px;
         font-size: 1.8rem;
+    }
+    .calc-bar {
+        width: 50%;
+        margin: 25vh 25vw 40px 25vw;
+    }
+    .wait {
+        text-align: center;
+        font-weight: lighter;
+        font-size: 2.2rem;
     }
     .desc {
         font-size: 18.2px;
@@ -656,5 +871,14 @@ hr {
         font-size: 1.4rem;
         line-height: 30.8px;
         line-height: 2.2rem;
+    }
+    .caution {
+        padding: 20px 10%;
+    }
+    .caution > p {
+        font-size: 17.5px;
+        font-size: 1.25rem;
+        line-height: 28px;
+        line-height: 2rem;
     }
 }
