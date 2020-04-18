@@ -190,7 +190,9 @@ body {
 }
 #title-box + div {
     width: 60%;
-    margin: 20px 20% 10px 20%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 #title-box + div > input {
     width: 100%;
@@ -242,6 +244,47 @@ body {
 .start:active {
     animation-play-state: running;
 }
+
+/* qna로 넘어갈 때 display: none; */
+#footer {
+    z-index: 10;
+    background: rgb(252, 252, 252);
+    width: 100%;
+    height: 60px;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    font-weight: lighter;
+    box-shadow: #ddd 0 0 15px 2px;
+    opacity: 0;
+    animation: fade-in 0.3s ease-in-out 2s both;
+}
+#footer > div {
+    box-sizing: border-box;
+    height: 30px;
+    margin: 10px 0;
+    float: left;
+}
+.highlight {
+    color: rgb(87, 58, 189);
+    font-weight: bolder;
+}
+.foot {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+}
+.github {
+    float: right;
+    background-image: url("../img/github-logo.png");
+}
+.tistory {
+    float: right;
+    background-image: url("../img/tistory-logo.svg");
+    /*
+        로고 출처 : https://marshall-ku.tistory.com/134
+        감사합니다!!
+    */
+}
     
 /* qna로 넘어갈 때 display: block; */
 #qna {
@@ -261,9 +304,9 @@ body {
 }
 .status {
     /* 임시 */
-    width: 60%;
+    width: 20%;
     height: 100%;
-    background: rgba(161, 127, 255, 0.8);
+    background-color: rgba(161, 127, 255, 0.8);
     border-radius: 20px;
 }
 .box {
@@ -287,8 +330,6 @@ body {
 .answer {
     width: 100%;
     margin: 0 auto;
-    opacity: 0;
-    animation: fade-in 0.4s linear 0.8s forwards;
 }
 .a {
     padding: 15px;
@@ -302,6 +343,7 @@ body {
     font-size: 1.1rem;
     font-weight: bolder;
     text-align: left;
+    opacity: 0;
 }
 .a:hover {
     background: #222;
@@ -547,46 +589,6 @@ hr {
 .go-origin {
     margin: 30px 10% 0 10%;
     width: 80%;
-}
-
-/* qna로 넘어갈 때 display: none; */
-#footer {
-    z-index: 10;
-    background: rgb(252, 252, 252);
-    width: 100%;
-    height: 60px;
-    padding: 10px 25px;
-    box-sizing: border-box;
-    font-weight: lighter;
-    box-shadow: #ddd 0 0 15px 2px;
-    animation: fade-in 0.3s ease-in-out;
-}
-#footer > div {
-    box-sizing: border-box;
-    height: 30px;
-    margin: 10px 0;
-    float: left;
-}
-.highlight {
-    color: rgb(87, 58, 189);
-    font-weight: bolder;
-}
-.foot {
-    margin: 5px;
-    width: 30px;
-    height: 30px;
-}
-.github {
-    float: right;
-    background-image: url("../img/github-logo.png");
-}
-.tistory {
-    float: right;
-    background-image: url("../img/tistory-logo.svg");
-    /*
-        로고 출처 : https://marshall-ku.tistory.com/134
-        감사합니다!!
-    */
 }
 
 /* media query */
