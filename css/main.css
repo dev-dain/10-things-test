@@ -52,6 +52,19 @@
     0% {transform: translateY(0);}
     100% {transform: translateY(10px);}
 }
+@-webkit-keyframes going-left {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-10px);}
+}
+@keyframes going-left {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-10px);}
+}
+@-webkit-keyframes working {
+    0% {width: 0%;}
+    50% {width: 40%;}
+    100% {width: 100%;}
+}
 @keyframes working {
     0% {width: 0%;}
     50% {width: 40%;}
@@ -144,7 +157,7 @@ body {
     font-size: 35px;
     font-size: 2.5rem;
     font-weight: bolder;
-    letter-spacing: -3px;
+    letter-spacing: -2.8px;
     letter-spacing: -0.2rem;
     line-height: 42px;
     line-height: 3rem;
@@ -175,10 +188,13 @@ body {
     font-weight: lighter;
     letter-spacing: -0.5px;
 }
-#title-box + input {
+#title-box + div {
     width: 60%;
+    margin: 20px 20% 10px 20%;
+}
+#title-box + div > input {
+    width: 100%;
     height: 40px;
-    margin: 20px 20% 30px 20%;
     border-radius: 20px;
     border: 1px #ddd solid;
     text-align: center;
@@ -190,17 +206,24 @@ body {
             going-down 0.4s ease-out 0.9s both;
 }
 .check-name {
+    display: inline-block;
+    width: 75%;
     text-align: center;
+    margin: 10px 12.5%;
+    color: #e41919;
 }
 .start-wrap {
-    margin: 15px 5% 0 5%;
+    margin: 0 5%;
     width: 90%;
 }
 .start {
     background-color: rgba(0, 135, 245, 0.9);
     box-sizing: border-box;
     min-width: 90%;
+    width: 90%;
     height: 60px;
+    margin: 0 5%;
+    border: none;
     border-radius: 50px;
     line-height: 60px;
     text-align: center;
@@ -222,7 +245,8 @@ body {
     
 /* qna로 넘어갈 때 display: block; */
 #qna {
-    /*display: none;*/
+    display: none;
+    opacity: 0;
 }
 .status-bar {
     width: 90%;
@@ -243,34 +267,41 @@ body {
     border-radius: 20px;
 }
 .box {
-    margin: 0 5%;
     width: 90%;
+    margin: 0 5%;
     background: rgb(252, 252, 252);
     box-shadow: #ddd 0px 0px 10px 5px;
     padding: 20px;
     border-radius: 20px;
 }
 .q {
+    width: 90%;
     margin: 0 auto;
     font-size: 23.8px;
     font-size: 1.7rem;
     font-weight: bolder;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     opacity: 0;
     animation: fade-in 0.5s ease-in-out 0.3s forwards;
 }
 .answer {
+    width: 100%;
     margin: 0 auto;
-    font-size: 18.2px;
-    font-size: 1.3rem;
-    font-weight: bolder;
     opacity: 0;
     animation: fade-in 0.4s linear 0.8s forwards;
 }
 .a {
+    padding: 15px;
+    width: 100%;
     cursor: pointer;
     margin: 0 auto;
     margin-top: 20px;
+    transition: background-color, color 0.2s linear;
+    border: none;
+    font-size: 15.4px;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    text-align: left;
 }
 .a:hover {
     background: #222;
@@ -284,16 +315,20 @@ body {
     width: 70%;
     height: 9vh;
     box-sizing: border-box;
-    margin: 35vh 15vw 20px 15vw;
+    margin: 35vh 15vw 10px 15vw;
     background: #222;
     border-radius: 10px;
     line-height: 9vh;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 7px;
+    font-size: 0.5rem;
     font-weight: lighter;
     text-align: center;
     position: relative;
-    letter-spacing: 1.3rem;
+    letter-spacing: 0.7rem;
+    opacity: 0;
+    animation: fade-in 0.5s ease-out 0s forwards, 
+            going-down 0.5s ease-out 0s forwards;
 }
 .calc-bar > .calc {
     width: 0%;
@@ -305,7 +340,7 @@ body {
     background: linear-gradient(to right,  #57a0db 1%,#e577c4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57a0db', endColorstr='#e577c4',GradientType=1 ); /* IE6-9 */
     /* animation을 나중에 붙여야 함 */
-    animation: working 7s forwards;
+    animation: working 5.5s 2s forwards;
     border-radius: 10px;
     position: absolute;
     top: 0; left: 0;
@@ -316,40 +351,10 @@ body {
     text-align: center;
     font-weight: lighter;
     font-size: 2rem;
-}
-.calc-bar {
-    width: 70%;
-    height: 9vh;
-    box-sizing: border-box;
-    margin: 25vh 15vw 35px 15vw;
-    background: #222;
-    border-radius: 12px;
-    line-height: 9vh;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: lighter;
-    text-align: center;
-    position: relative;
-    letter-spacing: 1.3rem;
-}
-.calc-bar > .calc {
-    position: absolute;
-    top: 0; left: 0;
-    width: 0%;
-    height: 100%;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#57a0db+1,e577c4+100 */
-    background: #57a0db; /* Old browsers */
-    background: -moz-linear-gradient(left,  #57a0db 1%, #e577c4 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  #57a0db 1%,#e577c4 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #57a0db 1%,#e577c4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57a0db', endColorstr='#e577c4',GradientType=1 ); /* IE6-9 */
-    animation: working 7s forwards;
-    border-radius: 10px;
-}
-.wait {
-    text-align: center;
-    font-weight: lighter;
-    font-size: 2rem;
+    opacity: 0;
+    padding-bottom: 10px;
+    animation: fade-in 0.3s ease-out 0.6s forwards, 
+    going-down 0.3s ease-out 0.6s forwards;
 }
 
 /* result로 넘어갈 때 display: block; */
@@ -598,6 +603,12 @@ hr {
         line-height: 49.2px;
         line-height: 3.3rem;
     }
+    .calc-bar {
+        font-size: 11.2px;
+        font-size: 0.8rem;
+        letter-spacing: 14px;
+        letter-spacing: 1rem;
+    }
 }
 
 @media all and (min-width: 768px) {
@@ -643,14 +654,27 @@ hr {
         line-height: 56px;
         line-height: 4rem;
     }
-    #title-box + input {
+    .time-logo + div {
+        font-size: 15.4px;
+        font-size: 1.1rem;
+        letter-spacing: -1px;
+    }
+    #title-box + div {
         width: 40%;
-        margin: 40px 30% 0 30%;
+        margin: 30px 30% 0 30%;
+    }
+    #title-box + div > input {
         height: 50px;
+    }
+    .check-name {
+        width: 60%;
+        margin: 25px 20%;
+        font-size: 15.4px;
+        font-size: 1.1rem;
     }
     .start-wrap {
         width: 60%;
-        margin: 50px 20% 50px 20%;
+        margin: 0px 20% 50px 20%;
     }
     .start {
         min-width: 80%;
@@ -658,6 +682,7 @@ hr {
         line-height: 100px;
         font-size: 42px;
         font-size: 3rem;
+        border: none;
     }
     #footer {
         margin: 40px 10% 0 10%;
@@ -665,6 +690,7 @@ hr {
         height: 80px;
         padding: 15px 30px;
         border-radius: 20px;
+        border: none;
     }
     .foot {
         margin: 5px;
@@ -675,9 +701,6 @@ hr {
         box-sizing: border-box;
         height: 30px;
         margin: 20px 0;
-    }
-    #qna {
-        /*display: none;*/
     }
     .status-bar {
         width: 80%;
@@ -698,19 +721,28 @@ hr {
         margin: 0 auto;
         font-size: 32px;
         font-size: 2rem;
-        margin-bottom: 80px;
+        margin-bottom: 60px;
     }
     .answer {
-        margin: 0 auto;
+        width: 90%;
+        margin: 0 5%;
         font-size: 21px;
         font-size: 1.5rem;
     }
     .a {
-        margin: 30px auto;
+        padding: 20px 30px;
+        width: 100%;
+        margin: 15px 0;
+        font-size: 18.2px;
+        font-size: 1.3rem;
     }
     .calc-bar {
         width: 60%;
-        margin: 25vh 20vw 40px 20vw;
+        margin: 25vh 20vw 30px 20vw;
+        font-size: 15.4px;
+        font-size: 1.1rem;
+        letter-spacing: 18.2px;
+        letter-spacing: 1.3rem;
     }
     .wait {
         text-align: center;
@@ -781,15 +813,14 @@ hr {
         line-height: 49px;
         line-height: 3.5rem;
     } 
-    .start-wrap {
-        margin-top: 60px;
+    .time-logo + div {
+        font-size: 16.8px;
+        font-size: 1.2rem;
+        letter-spacing: -1.2px;
     }
-    .start {
-        min-width: 70%;
-        height: 100px;
-        line-height: 100px;
-        font-size: 49px;
-        font-size: 3.5rem;
+    .check-name {
+        font-size: 16.8px;
+        font-size: 1.2rem;
     }
     #footer {
         margin: 50px 15% 0 15%;
@@ -801,9 +832,6 @@ hr {
         margin: 5px;
         width: 40px;
         height: 40px;
-    }
-    #qna {
-        /*display: none;*/
     }
     .status-bar {
         width: 70%;
@@ -825,12 +853,24 @@ hr {
         margin-bottom: 80px;
     }
     .answer {
+        width: 80%;
+        margin: 0 10%;
         font-size: 25.2px;
         font-size: 1.8rem;
+    }
+    .a {
+        padding: 25px 35px;
+        width: 100%;
+        font-size: 19.6px;
+        font-size: 1.4rem;
     }
     .calc-bar {
         width: 50%;
         margin: 25vh 25vw 40px 25vw;
+        font-size: 18.2px;
+        font-size: 1.3rem;
+        letter-spacing: 21px;
+        letter-spacing: 1.5rem;
     }
     .wait {
         text-align: center;
