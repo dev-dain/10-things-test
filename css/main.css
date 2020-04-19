@@ -1,8 +1,8 @@
+@charset "utf-8";
 /* 
     welcome 페이지가 아닌 페이지에서
     #wrap의 margin-top 값을 바꿔줘야 함
 */
-
 
 @import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 * {
@@ -189,10 +189,9 @@ body {
     letter-spacing: -0.5px;
 }
 #title-box + div {
+    box-sizing: border-box;
     width: 60%;
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin: 20px 20% 10px 20%;
 }
 #title-box + div > input {
     width: 100%;
@@ -238,7 +237,7 @@ body {
             going-down 0.5s ease-out 1.4s both,
             start-flicker 2.5s infinite;
 }  
-.start:hover {
+.start:hover, .start:focus {
     animation-play-state: paused;
 }
 .start:active {
@@ -311,15 +310,15 @@ body {
 }
 .box {
     width: 90%;
-    margin: 0 5%;
+    margin: 0 auto;
     background: rgb(252, 252, 252);
     box-shadow: #ddd 0px 0px 10px 5px;
     padding: 20px;
     border-radius: 20px;
 }
 .q {
-    width: 90%;
-    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
     font-size: 23.8px;
     font-size: 1.7rem;
     font-weight: bolder;
@@ -345,13 +344,17 @@ body {
     text-align: left;
     opacity: 0;
 }
-.a:hover {
+.a:hover, .a:focus {
     background: #222;
     color: #eee;
 }
+.a:last-child {
+    margin-bottom: 60px;
+}
 /* calc로 넘어갈 때 display: block; */
 #calc {
-    /*display: none;*/
+    display: none;
+    opacity: 0;
 }
 .calc-bar {
     width: 70%;
@@ -401,7 +404,8 @@ body {
 
 /* result로 넘어갈 때 display: block; */
 #result {
-    /*display: none;*/
+    display: none;
+    opacity: 0;
     background: rgb(252, 252, 252);
     box-shadow: #ddd 0px 0px 10px 5px;
     min-height: 100vh;
@@ -471,6 +475,52 @@ hr {
     margin: 20px 0 10px 0;
     border: 1.5px dashed #222;
 }
+#desc-box ~ p {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 21px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+#share-box {
+    box-sizing: border-box;
+    width: 80%;
+    margin: 25px 10% 30px 10%;
+    background: #222;
+    height: 50px;
+    border-radius: 40px;
+    padding: 10px;
+}
+#share-box span {
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    cursor: pointer;
+}
+.tw {
+    background-image: url('../img/tw.svg');
+    /* 
+    자료 출처
+    http://www.vectorico.com/twitter-logo-white-on-blue/
+    */
+}
+.fb {
+    background-image: url('../img/fb.svg');
+    /* 
+    자료 출처
+    https://commons.wikimedia.org/wiki/File:Facebook_f_logo_(2019).svg
+    */
+}
+.katalk {
+    background-image: url('../img/katalk.png')
+    /*
+    자료 출처
+    https://forhappywomen.com/archives/3015
+    */
+}
 #intro-box {
     padding-top: 60px;
 }
@@ -519,52 +569,6 @@ hr {
 }
 .art-sns {
     margin-bottom: 30px;
-}
-#intro-box ~ p {
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 21px;
-    font-size: 1.5rem;
-    font-weight: bolder;
-}
-#share-box {
-    box-sizing: border-box;
-    width: 80%;
-    margin: 25px 10% 30px 10%;
-    background: #222;
-    height: 50px;
-    border-radius: 40px;
-    padding: 10px;
-}
-#share-box span {
-    display: inline-block;
-    margin-right: 5px;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    background-size: cover;
-    cursor: pointer;
-}
-.tw {
-    background-image: url('../img/tw.svg');
-    /* 
-    자료 출처
-    http://www.vectorico.com/twitter-logo-white-on-blue/
-    */
-}
-.fb {
-    background-image: url('../img/fb.svg');
-    /* 
-    자료 출처
-    https://commons.wikimedia.org/wiki/File:Facebook_f_logo_(2019).svg
-    */
-}
-.katalk {
-    background-image: url('../img/katalk.png')
-    /*
-    자료 출처
-    https://forhappywomen.com/archives/3015
-    */
 }
 .caution {
     padding: 20px 5%;
@@ -708,9 +712,6 @@ hr {
         width: 80%;
         margin: 0px 10% 20px 10%;
     }
-    .status {
-        /* 임시 */
-    }
     .box {
         margin: 0 auto;
         width: 80%;
@@ -757,12 +758,12 @@ hr {
         line-height: 28px;
         line-height: 2rem;
     }
-    .artist {
-        margin-bottom: 40px;
-    }
     #share-box {
         width: 40%;
         margin: 25px 30% 30px 30%;
+    }
+    .artist {
+        margin-bottom: 40px;
     }
     .go-origin {
         width: 40%;
@@ -839,9 +840,6 @@ hr {
         width: 70%;
         margin: 0px 15% 40px 15%;
     }
-    .status {
-        /* 임시 */
-    }
     .box {
         width: 70%;
         background: rgb(252, 252, 252);
@@ -889,16 +887,16 @@ hr {
         width: 90%;
         margin: 20px 5% 10px 5%;
     }
+    #share-box {
+        width: 30%;
+        margin: 25px 35% 30px 35%;
+    }
     .btn {
         width: 30%;
         margin: 0 35%;
     }
     .art-sns {
         margin-bottom: 40px;
-    }
-    #share-box {
-        width: 30%;
-        margin: 25px 35% 30px 35%;
     }
     .go-origin {
         margin: 30px 35% 0 35%;

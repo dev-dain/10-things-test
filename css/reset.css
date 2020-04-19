@@ -1,7 +1,8 @@
+@charset "utf-8";
 html, body { 
     overflow-x: hidden;
 }    
-body, p {
+body, p, input {
     margin: 0;
     padding: 0;
     line-height: 1;
@@ -12,4 +13,8 @@ header, footer, section {
 }
 a {
     text-decoration: none;
+}
+::selection {
+    color: rgb(0, 165, 245);
+    background: #fff; 
 }
