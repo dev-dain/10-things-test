@@ -1,14 +1,72 @@
 const header = document.getElementById('header');
 const footer = document.getElementById('footer');
 const qna = document.getElementById('qna');
+const u_name = document.querySelector('input[type=text]');
+const wrap = document.getElementById('wrap');
+const tabletMQL = window.matchMedia("all and (min-width: 768px");
+const pcMQL = window.matchMedia("all and (min-width: 1024px)");
 const ENDPOINT = 10;
 let qIdx = -1;
 let score = 0;
 let beginFlag = false;
 let select = [];
 
+function calcScore() {
+    let point = 0;
+    let temp;
+    for (let i = 0; i < ENDPOINT; i++) {
+        temp = qnaList[i].a[select[i]].score;
+        point += temp;
+    }
+    return point;
+}
+
+function sortResult(point) {
+    let num = 0;
+    if (point <= 20) {
+        num = 0;
+    } else if (point <= 30) {
+        num = 1;
+    } else if (point <= 40) {
+        num = 2;
+    } else if (point <= 50) {
+        num = 3;
+    } else if (point <= 60) {
+        num = 4;
+    } else {
+        num = 5;
+    }
+    return num;
+}
+
 function goResult() {
+    if (pcMQL.matches) {
+        console.log('PC');
+        wrap.style.marginTop = '150px';
+    } else if (tabletMQL.matches) {
+        console.log('tablet');
+        wrap.style.marginTop = '115px';
+    } 
+
     const result = document.getElementById('result');
+    let point = calcScore();
+    let grade = sortResult(point);
+
+    let pTitle = document.querySelector('.p');
+    pTitle.innerHTML = u_name.value + ' 님의 점수는...';
+    
+    let res_point = document.querySelector('.point');
+    res_point.innerHTML = point + '점';
+
+    let pin = document.querySelector('.pin');
+    pin.style.marginLeft = infoList[grade].mLeft;
+
+    const animal = document.querySelector('.result');
+    animal.innerHTML = infoList[grade].name;
+
+    const desc = document.querySelector('.res');
+    desc.innerHTML = infoList[grade].desc;
+
     setTimeout(function() {
         header.style.display = 'block';
         footer.style.display = 'block';
@@ -18,13 +76,15 @@ function goResult() {
         footer.style.animation = 
             'fade-in 0.3s forwards';
         result.style.animation = 
-            'going-up 0.5s forwards, '+
+            'going-up 0.5s, '+
             'fade-in 0.5s forwards';
     }, 600);
+    
 }
 
 function end() {
     qna.style.animation ='';
+    //다시 보기
     const interval = setInterval(function() {
         qna.style.opacity -= 0.1;
         qna.style.transform = 'translateY(-1px)';
@@ -98,7 +158,7 @@ function goNext() {
     let status = document.querySelector('.status');
     status.style.width = (ENDPOINT * (qIdx+1))+'%';
     
-    qNum = qnaList[qIdx];
+    const qNum = qnaList[qIdx];
     const q = document.querySelector('.q');
     q.innerHTML = qNum.q;
     qna.style.animation = 
@@ -115,6 +175,7 @@ function goNext() {
 }
 
 function begin() {
+    console.log(u_name.value);
     if (beginFlag)
         return;
     beginFlag = true;
@@ -135,17 +196,23 @@ function begin() {
         footer.style.display = 'none';
         welcome.style.display = 'none';
         qna.style.display = 'block';
+        if (pcMQL.matches) {
+            console.log('PC');
+            wrap.style.marginTop = '50px';
+        } else if (tabletMQL.matches) {
+            console.log('tablet');
+            wrap.style.marginTop = '30px';
+        } 
         goNext();
     }, 1000);
 }
 
 function load() {
-    const name = document.querySelector('input[type=text]');
     const msg = document.querySelector('.check-name');
     const start_btn = document.querySelector('.start');
 
-    name.addEventListener('blur', function() {
-        if (name.value.length < 1) {
+    u_name.addEventListener('blur', function() {
+        if (u_name.value.length < 1) {
             msg.innerHTML = '이름을 입력하고 시작해 주세요.';
         } else {
             msg.innerHTML = '';
@@ -153,7 +220,7 @@ function load() {
     });
     
     start_btn.addEventListener('click', function() {
-        if (name.value.length < 1) {
+        if (u_name.value.length < 1) {
             msg.innerHTML = '이름을 입력하고 시작해 주세요.';
         } else {
             msg.innerHTML = '';

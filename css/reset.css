@@ -15,6 +15,6 @@ a {
     text-decoration: none;
 }
 ::selection {
-    color: rgb(0, 165, 245);
-    background: #fff; 
+    color: rgb(0, 205, 245);
+    background: #333; 
 }
