@@ -153,7 +153,7 @@ body {
 #title-box > div:last-child {
     margin-bottom: 0px;
 }
-.title {
+.title, h1 {
     font-size: 35px;
     font-size: 2.5rem;
     font-weight: bolder;
@@ -461,7 +461,7 @@ body {
             going-down 0.3s ease-out 3.2s both;
 }
 .desc {
-    margin: 30px 5% 80px 5%;
+    margin: 30px 5% 50px 5%;
     width: 90%;
     font-size: 15.4px;
     font-size: 1.1rem;
@@ -512,15 +512,22 @@ hr {
     https://commons.wikimedia.org/wiki/File:Facebook_f_logo_(2019).svg
     */
 }
-.katalk {
-    background-image: url('../img/katalk.png')
+.nv {
+    background-image: url('../img/naver.png');
     /*
     자료 출처
-    https://forhappywomen.com/archives/3015
+    https://www.facebook.com/184030231730640/photos/1175959155871071/
+    */
+}
+.band {
+    background-image: url('../img/band.png');
+    /*
+    자료 출처
+    https://upload.wikimedia.org/wikipedia/commons/3/30/2._BAND_Icon.png
     */
 }
 #intro-box {
-    padding-top: 60px;
+    padding-top: 50px;
 }
 .pro_pic {
     background-image: url('../img/gyeoly.jpg');
@@ -707,8 +714,8 @@ hr {
         margin: 20px 0;
     }
     .status-bar {
-        width: 80%;
-        margin: 0px 10% 20px 10%;
+        width: 70%;
+        margin: 0px 15% 20px 15%;
     }
     .box {
         margin: 0 auto;
@@ -722,11 +729,11 @@ hr {
         margin: 0 auto;
         font-size: 32px;
         font-size: 2rem;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
     }
     .answer {
-        width: 90%;
-        margin: 0 5%;
+        width: 80%;
+        margin: 0 10%;
         font-size: 21px;
         font-size: 1.5rem;
     }
@@ -750,7 +757,12 @@ hr {
         font-weight: lighter;
         font-size: 2.2rem;
     }
+    #score-box > .point {
+        font-size: 63px;
+        font-size: 4.5rem;
+    }
     .desc {
+        margin: 30px 5% 60px 5%;
         font-size: 16.8px;
         font-size: 1.2rem;
         line-height: 28px;
@@ -760,12 +772,11 @@ hr {
         width: 40%;
         margin: 25px 30% 30px 30%;
     }
+    #intro-box {
+        padding-top: 60px;
+    }
     .artist {
         margin-bottom: 40px;
-    }
-    .go-origin {
-        width: 40%;
-        margin: 30px 30% 0 30%;
     }
     .caution {
         padding: 20px 7.5%;
@@ -775,6 +786,10 @@ hr {
         font-size: 1.1rem;
         line-height: 23.8px;
         line-height: 1.7rem;
+    }
+    .go-origin {
+        width: 40%;
+        margin: 30px 30% 0 30%;
     }
 }
 
@@ -796,7 +811,7 @@ hr {
     .container {
         min-width: 70%;
         width: 70%;
-        padding: 100px 2.5% 30px 2.5%;
+        padding: 100px 5% 40px 5%;
     }
     #title-box > div {
         margin: 60px 0 auto;
@@ -824,7 +839,7 @@ hr {
         font-size: 1.2rem;
     }
     #footer {
-        margin: 50px 15% 0 15%;
+        margin: 60px 15% 0 15%;
         width: 70%;
         height: 100px;
         padding: 25px 30px;
@@ -835,15 +850,7 @@ hr {
         height: 40px;
     }
     .status-bar {
-        width: 70%;
         margin: 0px 15% 40px 15%;
-    }
-    .box {
-        width: 70%;
-        background: rgb(252, 252, 252);
-        box-shadow: #ddd 0px 0px 10px 5px;
-        padding: 30px;
-        border-radius: 20px;
     }
     .q {
         font-size: 35px;
@@ -851,8 +858,6 @@ hr {
         margin-bottom: 80px;
     }
     .answer {
-        width: 80%;
-        margin: 0 10%;
         font-size: 25.2px;
         font-size: 1.8rem;
     }
@@ -875,11 +880,18 @@ hr {
         font-weight: lighter;
         font-size: 2.2rem;
     }
+    #score-box > .point {
+        font-size: 70px;
+        font-size: 5rem;
+    }
     .desc {
         font-size: 18.2px;
         font-size: 1.3rem;
         line-height: 29.4px;
         line-height: 2.1rem;
+    }
+    #intro-box {
+        padding-top: 60px;
     }
     hr {
         width: 90%;
@@ -893,6 +905,10 @@ hr {
         width: 30%;
         margin: 0 35%;
     }
+    .btn > a {
+        font-size: 16.8px;
+        font-size: 1.2rem;
+    }
     .art-sns {
         margin-bottom: 40px;
     }
@@ -902,20 +918,64 @@ hr {
 }
 
 @media all and (min-width: 1440px) {
+    #header {
+        width: 55%;
+        height: 100px;
+        margin: 0 22.5%;
+        padding: 15px;
+    }
+    .container {
+        min-width: 55%;
+        width: 55%;
+        padding: 100px 3.5% 50px 3.5%;
+    }
+    #footer {
+        margin: 80px 22.5% 0 22.5%;
+        width: 55%;
+        height: 100px;
+        padding: 25px 30px;
+    }
+    .status-bar {
+        width: 90%;
+        margin: 0 5% 40px 5%;
+    }
+    .q {
+        width: 100%;
+        font-size: 35px;
+        font-size: 2.5rem;
+        margin-bottom: 80px;
+    }
+    .answer {
+        width: 100%;
+        margin: 0;
+        font-size: 25.2px;
+        font-size: 1.8rem;
+    }
+    #score-box > .point {
+        font-size: 77px;
+        font-size: 5.5rem;
+    }
     .desc {
-        width: 80%;
-        margin: 30px 10% 80px 10%;
+        width: 90%;
+        margin: 30px 5% 70px 5%;
         font-size: 19.6px;
         font-size: 1.4rem;
         line-height: 30.8px;
         line-height: 2.2rem;
     }
+    hr {
+        width: 90%;
+        margin: 35px 5% 35px 5%;
+    }
+    #intro-box {
+        padding-top: 70px;
+    }
     .caution {
         padding: 20px 10%;
     }
     .caution > p {
-        font-size: 17.5px;
-        font-size: 1.25rem;
+        font-size: 16.8px;
+        font-size: 1.2rem;
         line-height: 28px;
         line-height: 2rem;
     }
