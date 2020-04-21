@@ -11,6 +11,15 @@ let score = 0;
 let beginFlag = false;
 let select = [];
 
+function copy() {
+    var tmp = document.createElement('textarea');
+    document.body.appendChild(tmp);
+    tmp.value = url;
+    tmp.select();
+    document.execCommand('copy');
+    document.body.removeChild(tmp);
+}
+
 function calcScore() {
     let point = 0;
     let temp;
@@ -121,16 +130,15 @@ function addAnswer(answerTxt, idx) {
     answer.innerHTML = answerTxt;
     answer.addEventListener('click', function() {
         let parent = answer.parentNode;
-        parent.style.animation = '';
         let children = parent.childNodes;
         for (let i = 0; i < children.length; i++) {
             children[i].disabled = true;
         }
-        parent.style.animation = 
-            'fade-out 0.5s 0.4s';
+        parent.classList.add('fade-out-5-4');
         setTimeout(function() {
             select[qIdx] = idx; 
             a.innerHTML = '';
+            parent.classList.remove('fade-out-5-4');
             goNext();
         }, 800);
     });

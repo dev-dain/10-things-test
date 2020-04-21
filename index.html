@@ -38,10 +38,10 @@
                         10 Things<br>
                         I Know About You
                     </h1>
-                    <div class="sec-tit">
+                    <h3 class="sec-tit">
                         10가지 질문으로<br>
                         알아보는 내 이미지
-                    </div>
+                    </h3>
                     <span class="time-logo"></span>
                     <div>소요 시간 : 3분 내외</div>
                 </div>
@@ -87,11 +87,7 @@
                     <div class="score-bar"></div>
                 </div>
                 <div id="desc-box">
-                    <div class="art">
-                        그림이 들어가는 자리<br>
-                        아예 정사각형 모양을 만들어서 모서리 깎아서 인장처럼 둥글게 하거나<br>
-                        이런 박스에서 모서리만 살짝 깎을 수 있음
-                    </div>
+                    <div class="art"></div>
                     <div class="result title">
 
                     </div>
@@ -115,6 +111,9 @@
                         <span class="band"></span>
                     </a>
                 </div>
+                <button onclick=copy() class="btn">
+                    링크 복사하기
+                </button>
                 <hr>
                 <div id="intro-box">
                     <div class="pro_pic"></div>
@@ -161,36 +160,7 @@
             </footer>
         </div>
     </body>
-    <script>
-        const url= 'https://dev-dain.github.io/10-things-test';
-        const title = '[심리테스트] 나를 알아보는 10가지 질문 '
-        const hash = '%2310_things_test %233분심리테스트 %23이미지테스트 '
-
-        function fb() {
-            window.open('https://www.facebook.com/sharer/sharer.php?u='
-                        +url+'&t='+title+''+hash, 
-                        'facebooksharedialog','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
-            return false;
-        }
-        function tw() {
-            window.open('https://twitter.com/intent/tweet?text='
-                        +title+'\n'+hash+'\n'+url, 'twittersharedialog',
-                        'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
-            return false;
-        }
-        function nv() {
-            window.open('http://share.naver.com/web/shareView.nhn?url='
-                        +url+'&title='+title, 'naversharedialog', 
-                        'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600'); 
-		    return false;
-        }
-        function band() {
-            window.open('https://band.us/plugin/share?url='
-                        +url+'&title='+title, 'naversharedialog', 
-                        'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600'); 
-    		return false;
-        }
-    </script>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/share.js"></script>
 </html>

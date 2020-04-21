@@ -18,3 +18,8 @@ a {
     color: rgb(0, 205, 245);
     background: #333; 
 }
+button {
+    border: none;
+    font-size: 16px;
+    font-size: 1rem;
+}
