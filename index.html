@@ -160,7 +160,14 @@
             </footer>
         </div>
     </body>
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/share.js"></script>
+    <!--[if lt IE 11]
+        <script src="js/data_es5.js"></script>
+        <script src="js/main_es5.js"></script>
+        <script src="js/share_es5.js"></script>
+    <![endif]-->
+    <!--[If gte IE 11]><!-->
+        <script src="js/data.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/share.js"></script>
+    <!--<![endif]-->
 </html>
