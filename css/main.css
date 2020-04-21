@@ -985,8 +985,9 @@ hr {
 
 /* dark mode */
 @media (prefers-color-scheme: dark) {
-    * {
-        filter: invert(90%) hue-rotate(25deg);
+    ::selection {
+        color: rgb(87, 58, 189);
+        background: #ddd; 
     }
     body {
         /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00a4e0+0,46137a+100 */
@@ -995,5 +996,81 @@ hr {
         background: -webkit-linear-gradient(left,  #00a4e0 0%,#46137a 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to right,  #00a4e0 0%,#46137a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a4e0', endColorstr='#46137a',GradientType=1 ); /* IE6-9 */
+    }
+    #header {
+        background: #333;
+        box-shadow: #222 0 0 10px 5px;
+    }
+    #welcome, #result {
+        background: #333;
+        box-shadow: #222 0px 0px 10px 5px;
+        color: rgb(252, 252, 252);
+    }
+    .logo {
+        opacity: 1;
+    }
+    .logo:hover {
+        opacity: 0.8;
+    }
+    .time-logo, .foot, .pin {
+        filter: invert(100%);
+    }
+    .check-name {
+        color: #ff0e0e;
+    }
+    .highlight {
+        color: rgb(0, 205, 245);
+        font-weight: bolder;
+    }
+    #footer {
+        background: #333;
+        box-shadow: #222 0 0 15px 2px;
+        color: rgb(252, 252, 252);
+    }
+    .box {
+        background: #333;
+        box-shadow: #222 0px 0px 10px 5px;
+        color: rgb(252, 252, 252);
+    }
+    .status-bar {
+        border: 3px solid #222;
+        background: #333;
+    }
+    .status {
+        background-color: rgb(176, 147, 255);
+    }
+    .calc-bar {
+        background: #222;
+        color: rgb(252, 252, 252);
+    }
+    .wait {
+        color: rgb(252, 252, 252);
+    }
+    .art {
+        box-shadow: #222 0px 0px 10px 5px;
+    }
+    hr {
+        border: 1.5px dashed #ddd;
+    }
+    #share-box {
+        background: rgb(252, 252, 252);
+    }
+    .btn {
+        background: rgba(167, 105, 218, 1.0);
+    }
+    .btn:hover {
+        background: rgba(167, 105, 218, 0.7);
+    }
+    .pro_pic {
+        opacity: 1.0;
+    }
+    .pro_pic:hover {
+        opacity: 0.7;
+    }
+    .caution > p > a {
+        color: rgba(94, 134, 255, 1.0);
+    }
+    .caution > p > a:hover {
+        color: rgba(94, 134, 255, 0.7);
     }
 }
