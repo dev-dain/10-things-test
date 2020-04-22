@@ -28,9 +28,7 @@
     <body>
         <div id="wrap">
             <header id="header">
-                <a href="" title="로고" alt="로고">
-                    <span class="logo head">로고</span>
-                </a>
+                <button class="logo head" onclick=javascript:switchMode()></button>
             </header>
             <section id="welcome" class="container">
                 <div id="title-box">
@@ -161,11 +159,13 @@
         </div>
     </body>
     <!--[if lt IE 11]
+        <script src="js/darkmode_es5.js"></script>
         <script src="js/data_es5.js"></script>
         <script src="js/main_es5.js"></script>
         <script src="js/share_es5.js"></script>
     <![endif]-->
     <!--[If gte IE 11]><!-->
+        <script src="js/darkmode.js"></script>
         <script src="js/data.js"></script>
         <script src="js/main.js"></script>
         <script src="js/share.js"></script>

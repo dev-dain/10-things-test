@@ -10,8 +10,19 @@ function fb() {
 }
 
 function tw() {
-  var name = document.querySelector('.result');
-  window.open('https://twitter.com/intent/tweet?text=' + title + '%0A' + '저는 ' + name.innerHTML + ' 이에요! ' + hash + '%0A' + url, 'twittersharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+  var name = document.querySelector('.result').innerHTML;
+
+  switch (name) {
+    case '표범':
+    case '유니콘':
+      name += '이에요! ';
+      break;
+
+    default:
+      name += '예요! ';
+  }
+
+  window.open('https://twitter.com/intent/tweet?text=' + title + '%0A' + '저는 ' + name + '' + hash + '%0A' + url, 'twittersharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
   return false;
 }
 
