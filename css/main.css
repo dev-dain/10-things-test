@@ -131,9 +131,9 @@ body {
 
 .container {
     box-sizing: border-box;
-    min-width: 90%;
-    width: 90%;
-    padding: 20px 5% 25px 5%;
+    min-width: 100%;
+    width: 100%;
+    padding: 20px 0 25px 0;
     margin: 0 auto;
 }
 #welcome {
@@ -210,22 +210,22 @@ body {
 }
 .check-name {
     display: inline-block;
-    width: 75%;
+    width: 80%;
     text-align: center;
-    margin: 10px 12.5%;
-    color: #e41919;
+    margin: 10px 10%;
+}
+.warning {
+    color: rgb(231, 20, 20, 0.8);
 }
 .start-wrap {
-    margin: 0 5%;
-    width: 90%;
+    margin: 0 20% 20px 20%;
+    width: 60%;
 }
 .start {
     background-color: rgba(0, 135, 245, 0.9);
     box-sizing: border-box;
-    min-width: 90%;
-    width: 90%;
+    width: 100%;
     height: 60px;
-    margin: 0 5%;
     border-radius: 50px;
     line-height: 60px;
     text-align: center;
@@ -292,8 +292,8 @@ body {
     opacity: 0;
 }
 .status-bar {
-    width: 90%;
-    margin: 0 5%;
+    width: 75%;
+    margin: 0 12.5%;
     height: 10px;
     background: transparent;
     border-radius: 20px;
@@ -306,11 +306,11 @@ body {
     /* 임시 */
     width: 20%;
     height: 100%;
-    background-color: rgba(161, 127, 255, 0.8);
+    background-color: rgba(191, 168, 255, 0.7);
     border-radius: 20px;
 }
 .box {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     background: rgb(252, 252, 252);
     box-shadow: #ddd 0px 0px 10px 5px;
@@ -319,7 +319,6 @@ body {
 }
 .q {
     box-sizing: border-box;
-    width: 100%;
     font-size: 23.8px;
     font-size: 1.7rem;
     font-weight: bolder;
@@ -329,13 +328,12 @@ body {
 }
 .answer {
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
 }
 .a {
     padding: 15px;
-    width: 100%;
     cursor: pointer;
-    margin: 0 auto;
+    margin: 0 10%;
     margin-top: 20px;
     transition: background-color, color 0.2s linear;
     border: none;
@@ -445,7 +443,8 @@ body {
     background: -webkit-linear-gradient(left,  #6fb7e8 0%,#855299 50%,#af3838 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  #6fb7e8 0%,#855299 50%,#af3838 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6fb7e8', endColorstr='#af3838',GradientType=1 ); /* IE6-9 */
-    width: 100%;
+    width: 90%;
+    margin: 0 5%;
     height: 50px;
     border-radius: 50px;
     opacity: 0;
@@ -454,7 +453,8 @@ body {
 }
 .art {
     height: 600px;
-    width: 100%;
+    width: 90%;
+    margin: 0 5%;
     box-shadow: #ddd 0px 0px 10px 5px;
     margin-bottom: 40px;
     opacity: 0;
@@ -462,8 +462,8 @@ body {
             going-down 0.3s ease-out 3.2s both;
 }
 .desc {
-    margin: 30px 5% 50px 5%;
-    width: 90%;
+    margin: 30px 7.5% 50px 7.5%;
+    width: 85%;
     font-size: 15.4px;
     font-size: 1.1rem;
     font-weight: 350;
@@ -572,13 +572,13 @@ hr {
     font-weight: bolder;
 }
 .artist {
-    margin: 0 5% 30px 5%;
+    margin: 0 7.5% 30px 7.5%;
 }
 .art-sns {
     margin-bottom: 30px;
 }
 .caution {
-    padding: 20px 5%;
+    padding: 20px 7.5%;
 }
 .caution > p {
     line-height: 21px;
@@ -998,12 +998,12 @@ hr {
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a4e0', endColorstr='#46137a',GradientType=1 ); /* IE6-9 */
     }
     #header {
-        background: #333;
-        box-shadow: #222 0 0 10px 5px;
+        background: #111;
+        box-shadow: #000 0 0 10px 5px;
     }
     #welcome, #result {
-        background: #333;
-        box-shadow: #222 0px 0px 10px 5px;
+        background: #111;
+        box-shadow: #000 0 0 10px 5px;
         color: rgb(252, 252, 252);
     }
     .logo {
@@ -1015,45 +1015,47 @@ hr {
     .time-logo, .foot, .pin {
         filter: invert(100%);
     }
-    .check-name {
-        color: #ff0e0e;
+    .warning {
+        color: rgb(231, 20, 20, 1.0);
     }
     .highlight {
         color: rgb(0, 205, 245);
         font-weight: bolder;
     }
     #footer {
-        background: #333;
-        box-shadow: #222 0 0 15px 2px;
+        background: #111;
+        box-shadow: #000 0 0 15px 2px;
         color: rgb(252, 252, 252);
     }
     .box {
-        background: #333;
-        box-shadow: #222 0px 0px 10px 5px;
+        background: #111;
+        box-shadow: none;
+        border: 3px solid #000;
         color: rgb(252, 252, 252);
     }
+    .a:hover, .a:focus {
+        border: 3px solid #eee;
+        background: #eee;
+        color: #000;
+    }
     .status-bar {
-        border: 3px solid #222;
+        border: 3px solid #111;
         background: #333;
     }
     .status {
-        background-color: rgb(176, 147, 255);
-    }
-    .calc-bar {
-        background: #222;
-        color: rgb(252, 252, 252);
+        background-color: rgba(191, 168, 255, 1.0);
     }
     .wait {
         color: rgb(252, 252, 252);
     }
     .art {
-        box-shadow: #222 0px 0px 10px 5px;
+        box-shadow: #333 0px 0px 10px 5px;
     }
     hr {
         border: 1.5px dashed #ddd;
     }
     #share-box {
-        background: rgb(252, 252, 252);
+        background: #666;
     }
     .btn {
         background: rgba(167, 105, 218, 1.0);
