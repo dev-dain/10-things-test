@@ -3,12 +3,11 @@ const footer = document.getElementById('footer');
 const qna = document.getElementById('qna');
 const u_name = document.querySelector('input[type=text]');
 const wrap = document.getElementById('wrap');
-const tabletMQL = window.matchMedia("all and (min-width: 768px");
+const tabletMQL = window.matchMedia("all and (min-width: 768px)");
 const pcMQL = window.matchMedia("all and (min-width: 1024px)");
 const ENDPOINT = 10;
 let qIdx = -1;
 let score = 0;
-let beginFlag = false;
 let select = [];
 
 function copy() {
@@ -93,7 +92,6 @@ function goResult() {
 
 function end() {
     qna.style.animation ='';
-    //다시 보기
     const interval = setInterval(function() {
         qna.style.opacity -= 0.1;
         qna.style.transform = 'translateY(-1px)';
@@ -104,6 +102,7 @@ function end() {
     setTimeout(function() {
         qna.style.display = 'none';
     }, 500);
+    
     setTimeout(function() {
         const calc = document.getElementById('calc');
         calc.style.display = 'block';
@@ -156,13 +155,7 @@ function goNext() {
         end();
         return;
     }
-    /*
-    qna.style.animation = '';
-    qna.style.animation = 
-        'fade-out 0.3s ease-in-out, '+
-        'going-up 0.3s ease-in-out';
-    qna.style.opacity = 0;
-    */
+    
     let status = document.querySelector('.status');
     status.style.width = (ENDPOINT * (qIdx+1))+'%';
     
@@ -183,22 +176,19 @@ function goNext() {
 }
 
 function begin() {
-    console.log(u_name.value);
-    if (beginFlag)
-        return;
-    beginFlag = true;
-
     const welcome = document.getElementById('welcome');
 
     header.style.animation = 
         'going-up 0.4s forwards, '+
         'fade-out 0.4s forwards';
-    welcome.style.animation = 
-        'going-up 0.4s ease-in-out 0.5s forwards, '+
-        'fade-out 0.4s ease-in-out 0.5s forwards';
     footer.style.animation = 
         'going-down 0.4s forwards, '+
         'fade-out 0.4s forwards';
+    setTimeout(function() {
+        welcome.style.animation = 
+        'going-up 0.4s ease-in-out forwards, '+
+        'fade-out 0.4s ease-in-out forwards';
+    }, 500);
     setTimeout(function() {
         header.style.display = 'none';
         footer.style.display = 'none';
@@ -232,6 +222,7 @@ function load() {
             msg.innerHTML = '이름을 입력하고 시작해 주세요.';
         } else {
             msg.innerHTML = '';
+            start_btn.disabled = true;
             begin();
         }
     });

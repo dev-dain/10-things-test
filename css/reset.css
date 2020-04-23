@@ -11,15 +11,17 @@ body, p, input {
 header, footer, section { 
     display: block; 
 }
+
 a {
     text-decoration: none;
 }
 ::selection {
-    color: rgb(0, 205, 245);
     background: #333; 
+    color: rgb(0, 205, 245);
 }
 button {
     border: none;
     font-size: 16px;
     font-size: 1rem;
+    cursor: pointer;
 }

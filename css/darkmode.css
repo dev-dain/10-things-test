@@ -4,27 +4,27 @@
         transition: background-color 0.5s;
     }
     ::selection {
+        background: #fff; 
         color: rgb(87, 58, 189);
-        background: #ddd; 
     }
     body {
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00a4e0+0,46137a+100 */
-        background: #00a4e0; /* Old browsers */
-        background: -moz-linear-gradient(left,  #00a4e0 0%, #46137a 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(left,  #00a4e0 0%,#46137a 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to right,  #00a4e0 0%,#46137a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a4e0', endColorstr='#46137a',GradientType=1 ); /* IE6-9 */
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0e3a70+0,43094f+100 */
+        background: #0e3a70; /* Old browsers */
+        background: -moz-linear-gradient(left,  #0e3a70 0%, #43094f 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  #0e3a70 0%,#43094f 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  #0e3a70 0%,#43094f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e3a70', endColorstr='#43094f',GradientType=1 ); /* IE6-9 */
     }
     #header {
-        background: #111;
         box-shadow: #000 0 0 10px 5px;
+        background: #111;
     }
     .head {
         background-image: url('../img/day.png');
     }
     #welcome, #result {
-        background: #111;
         box-shadow: #000 0 0 10px 5px;
+        background: #111;
         color: rgb(252, 252, 252);
     }
     .logo {
@@ -37,9 +37,9 @@
         filter: invert(100%);
     }
     #title-box + div > input {
-        color: #fff;
-        background-color: #111;
         border: 1.5px solid #fff;
+        background-color: #111;
+        color: #fff;
     }
     .warning {
         color: rgb(231, 20, 20, 1.0);
@@ -49,14 +49,14 @@
         font-weight: bolder;
     }
     #footer {
-        background: #111;
         box-shadow: #000 0 0 15px 2px;
+        background: #111;
         color: rgb(252, 252, 252);
     }
     .box {
-        background: #111;
         box-shadow: none;
         border: 3px solid #000;
+        background: #111;
         color: rgb(252, 252, 252);
     }
     .a:hover, .a:focus {

@@ -5,12 +5,11 @@ var footer = document.getElementById('footer');
 var qna = document.getElementById('qna');
 var u_name = document.querySelector('input[type=text]');
 var wrap = document.getElementById('wrap');
-var tabletMQL = window.matchMedia("all and (min-width: 768px");
+var tabletMQL = window.matchMedia("all and (min-width: 768px)");
 var pcMQL = window.matchMedia("all and (min-width: 1024px)");
 var ENDPOINT = 10;
 var qIdx = -1;
 var score = 0;
-var beginFlag = false;
 var select = [];
 
 function copy() {
@@ -87,8 +86,7 @@ function goResult() {
 }
 
 function end() {
-  qna.style.animation = ''; //다시 보기
-
+  qna.style.animation = '';
   var interval = setInterval(function () {
     qna.style.opacity -= 0.1;
     qna.style.transform = 'translateY(-1px)';
@@ -146,14 +144,6 @@ function goNext() {
     end();
     return;
   }
-  /*
-  qna.style.animation = '';
-  qna.style.animation = 
-      'fade-out 0.3s ease-in-out, '+
-      'going-up 0.3s ease-in-out';
-  qna.style.opacity = 0;
-  */
-
 
   var status = document.querySelector('.status');
   status.style.width = ENDPOINT * (qIdx + 1) + '%';
@@ -173,13 +163,12 @@ function goNext() {
 }
 
 function begin() {
-  console.log(u_name.value);
-  if (beginFlag) return;
-  beginFlag = true;
   var welcome = document.getElementById('welcome');
   header.style.animation = 'going-up 0.4s forwards, ' + 'fade-out 0.4s forwards';
-  welcome.style.animation = 'going-up 0.4s ease-in-out 0.5s forwards, ' + 'fade-out 0.4s ease-in-out 0.5s forwards';
   footer.style.animation = 'going-down 0.4s forwards, ' + 'fade-out 0.4s forwards';
+  setTimeout(function () {
+    welcome.style.animation = 'going-up 0.4s ease-in-out forwards, ' + 'fade-out 0.4s ease-in-out forwards';
+  }, 500);
   setTimeout(function () {
     header.style.display = 'none';
     footer.style.display = 'none';
@@ -213,6 +202,7 @@ function load() {
       msg.innerHTML = '이름을 입력하고 시작해 주세요.';
     } else {
       msg.innerHTML = '';
+      start_btn.disabled = true;
       begin();
     }
   });
