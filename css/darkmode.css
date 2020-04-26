@@ -7,6 +7,12 @@
         background: #fff; 
         color: rgb(87, 58, 189);
     }
+    .answer button {
+        transition: color 0.2s;
+    }
+    .answer button:disabled {
+        color: #888;
+    }
     body {
         /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0e3a70+0,43094f+100 */
         background: #0e3a70; /* Old browsers */
@@ -36,7 +42,13 @@
     .time-logo, .foot, .pin {
         filter: invert(100%);
     }
-    #title-box + div > input {
+    hr {
+        border: 1.5px dashed #ddd;
+    }
+    #welcome > p:first-of-type {
+        font-weight: 200;
+    }
+    #name-input > input {
         border: 1.5px solid #fff;
         background-color: #111;
         color: #fff;
@@ -76,9 +88,6 @@
     }
     .art {
         box-shadow: #333 0px 0px 10px 5px;
-    }
-    hr {
-        border: 1.5px dashed #ddd;
     }
     #share-box {
         background: #666;
