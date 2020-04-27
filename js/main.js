@@ -10,6 +10,23 @@ let qIdx = -1;
 let score = 0;
 let select = [];
 
+function goArtist() {
+    const elem = document.getElementById('intro-box');
+    let elemTop = window.pageYOffset + elem.getBoundingClientRect().top;
+    if (pcMQL.matches) {
+        elemTop -= 150;
+    } else if (tabletMQL.matches) {
+        elemTop -= 115;
+    } else {
+        elemTop -= 60;
+    }
+    window.scroll({
+        behavior: 'smooth',
+        left: 0,
+        top: elemTop
+    });
+}
+
 function copy() {
     var tmp = document.createElement('textarea');
     document.body.appendChild(tmp);

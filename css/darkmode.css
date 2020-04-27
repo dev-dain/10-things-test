@@ -45,9 +45,6 @@
     hr {
         border: 1.5px dashed #ddd;
     }
-    #welcome > p:first-of-type {
-        font-weight: 200;
-    }
     #name-input > input {
         border: 1.5px solid #fff;
         background-color: #111;
