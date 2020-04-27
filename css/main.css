@@ -658,6 +658,10 @@ hr {
         margin: 25px 20% 30px 20%;
         width: 60%;
     }
+    .artist {
+        font-size: 17.6px;
+        font-size: 1.1rem;
+    }
     .caution > p {
         line-height: 24px;
         line-height: 1.5rem;
