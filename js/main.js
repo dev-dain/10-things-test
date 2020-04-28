@@ -11,7 +11,21 @@ let score = 0;
 let select = [];
 
 function goArtist() {
-    const elem = document.getElementById('intro-box');
+    goTo('artist');
+}
+
+function goShare() {
+    goTo('share');
+}
+
+function goTo(dest) {
+    console.log(dest);
+    let elem;
+    if (dest === 'artist') {
+        elem = document.getElementById('intro-box');
+    } else {
+        elem = document.getElementById('share-box');
+    }
     let elemTop = window.pageYOffset + elem.getBoundingClientRect().top;
     if (pcMQL.matches) {
         elemTop -= 150;
@@ -86,12 +100,11 @@ function goResult() {
     let pin = document.querySelector('.pin');
     pin.style.marginLeft = infoList[grade].mLeft;
 
-    let img_url = 'url("img/image-' + grade + '.png")';
-    const res_img = document.querySelector('.art');
-    res_img.style.backgroundImage = img_url;
-    res_img.style.backgroundRepeat = "no-repeat";
-    res_img.style.backgroundSize = "contain";
-    res_img.style.backgroundPosition = "center";
+    let img_url = 'img/image-' + grade + '.png';
+    const res_img = document.createElement('img');
+    res_img.src = img_url;
+    const res_img_div = document.querySelector('.art');
+    res_img_div.appendChild(res_img);
 
     const animal = document.querySelector('.result');
     animal.innerHTML = infoList[grade].name;
