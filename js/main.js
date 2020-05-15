@@ -94,6 +94,8 @@ const goResult = () => {
     res_point.innerHTML = point + '점';
     pin.style.marginLeft = infoList[grade].mLeft;
     res_img.src = img_url;
+    res_img.alt = infoList[grade].name;
+    res_img.title = infoList[grade].name;
     res_img_div.appendChild(res_img);
     animal.innerHTML = infoList[grade].name;
     desc.innerHTML = infoList[grade].desc;

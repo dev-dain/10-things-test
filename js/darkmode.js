@@ -15,7 +15,9 @@ const goLight = () => {
         head.removeChild(dark_css);
 }
 const isDarkMode = () => 
-    (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? goDark() : goLight();
+    (window.matchMedia && 
+    window.matchMedia('(prefers-color-scheme: dark)').matches) 
+    ? goDark() : goLight();
 const switchMode = () => flag ? goLight() : goDark();
 
 isDarkMode();
