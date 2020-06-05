@@ -1,109 +1,109 @@
 /* dark mode */
-    * {
-        transition: color 0.3s;
-        transition: background-color 0.5s;
-    }
-    ::selection {
-        background: #fff; 
-        color: rgb(87, 58, 189);
-    }
-    .answer button {
-        transition: color 0.2s;
-    }
-    .answer button:disabled {
-        color: #888;
-    }
-    body {
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0e3a70+0,43094f+100 */
-        background: #0e3a70; /* Old browsers */
-        background: -moz-linear-gradient(left,  #0e3a70 0%, #43094f 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(left,  #0e3a70 0%,#43094f 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to right,  #0e3a70 0%,#43094f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e3a70', endColorstr='#43094f',GradientType=1 ); /* IE6-9 */
-    }
-    #header {
-        box-shadow: #000 0 0 10px 5px;
-        background: #111;
-    }
-    .head {
-        background-image: url('../img/day.png');
-    }
-    #welcome, #result {
-        box-shadow: #000 0 0 10px 5px;
-        background: #111;
-        color: rgb(252, 252, 252);
-    }
-    .logo {
-        opacity: 1;
-    }
-    .logo:hover {
-        opacity: 0.8;
-    }
-    .time-logo, .foot, .pin {
-        filter: invert(100%);
-    }
-    hr {
-        border: 1.5px dashed #ddd;
-    }
-    #name-input > input {
-        border: 1.5px solid #fff;
-        background-color: #111;
-        color: #fff;
-    }
-    .warning {
-        color: rgb(231, 20, 20, 1.0);
-    }
-    .highlight {
-        color: rgb(0, 205, 245);
-        font-weight: bolder;
-    }
-    #footer {
-        box-shadow: #000 0 0 15px 2px;
-        background: #111;
-        color: rgb(252, 252, 252);
-    }
-    .box {
-        box-shadow: none;
-        border: 3px solid #000;
-        background: #111;
-        color: rgb(252, 252, 252);
-    }
-    .a:hover, .a:focus {
-        border: 3px solid #ddd;
-        background: #fff;
-        color: #000;
-    }
-    .status-bar {
-        border: 3px solid #111;
-        background: #333;
-    }
-    .status {
-        background-color: rgba(191, 168, 255, 1.0);
-    }
-    .wait {
-        color: rgb(252, 252, 252);
-    }
-    .art {
-        box-shadow: #333 0px 0px 10px 5px;
-    }
-    #share-box {
-        background: #666;
-    }
-    .btn {
-        background: rgba(167, 105, 218, 1.0);
-    }
-    .btn:hover {
-        background: rgba(167, 105, 218, 0.7);
-    }
-    .pro_pic {
-        opacity: 1.0;
-    }
-    .pro_pic:hover {
-        opacity: 0.7;
-    }
-    .caution > p > a {
-        color: rgba(94, 134, 255, 1.0);
-    }
-    .caution > p > a:hover {
-        color: rgba(94, 134, 255, 0.7);
-    }
+* {
+  transition: color 0.3s;
+  transition: background-color 0.5s;
+}
+::selection {
+  background: #fff; 
+  color: rgb(87, 58, 189);
+}
+.answer button {
+  transition: color 0.2s;
+}
+.answer button:disabled {
+  color: #888;
+}
+body {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0e3a70+0,43094f+100 */
+  background: #0e3a70; /* Old browsers */
+  background: -moz-linear-gradient(left,  #0e3a70 0%, #43094f 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #0e3a70 0%,#43094f 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #0e3a70 0%,#43094f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e3a70', endColorstr='#43094f',GradientType=1 ); /* IE6-9 */
+}
+#header {
+  box-shadow: #000 0 0 10px 5px;
+  background: #111;
+}
+.head {
+  background-image: url('../img/day.png');
+}
+#welcome, #result {
+  box-shadow: #000 0 0 10px 5px;
+  background: #111;
+  color: rgb(252, 252, 252);
+}
+.logo {
+  opacity: 1;
+}
+.logo:hover {
+  opacity: 0.8;
+}
+.time-logo, .foot, .pin {
+  filter: invert(100%);
+}
+hr {
+  border: 1.5px dashed #ddd;
+}
+#name-input > input {
+  border: 1.5px solid #fff;
+  background-color: #111;
+  color: #fff;
+}
+.warning {
+  color: rgb(231, 20, 20, 1.0);
+}
+.highlight {
+  color: rgb(0, 205, 245);
+  font-weight: bolder;
+}
+#footer {
+  box-shadow: #000 0 0 15px 2px;
+  background: #111;
+  color: rgb(252, 252, 252);
+}
+.box {
+  box-shadow: none;
+  border: 3px solid #000;
+  background: #111;
+  color: rgb(252, 252, 252);
+}
+.a:hover, .a:focus {
+  border: 3px solid #ddd;
+  background: #fff;
+  color: #000;
+}
+.status-bar {
+  border: 3px solid #111;
+  background: #333;
+}
+.status {
+  background-color: rgba(191, 168, 255, 1.0);
+}
+.wait {
+  color: rgb(252, 252, 252);
+}
+.art {
+  box-shadow: #333 0px 0px 10px 5px;
+}
+#share-box {
+  background: #666;
+}
+.btn {
+  background: rgba(167, 105, 218, 1.0);
+}
+.btn:hover {
+  background: rgba(167, 105, 218, 0.7);
+}
+.pro_pic {
+  opacity: 1.0;
+}
+.pro_pic:hover {
+  opacity: 0.7;
+}
+.caution > p > a {
+  color: rgba(94, 134, 255, 1.0);
+}
+.caution > p > a:hover {
+  color: rgba(94, 134, 255, 0.7);
+}

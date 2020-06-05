@@ -1,0 +1,93 @@
+/* calc로 넘어갈 때 display: block; */
+#calc {
+  display: none;
+  opacity: 0;
+}
+.calc-bar {
+  position: relative;
+  box-sizing: border-box;
+  margin: 30vh 15vw 10px 15vw;
+  width: 70%;
+  height: 9vh;
+  line-height: 9vh;
+  border-radius: 10px;
+  background: #222;
+  color: #fff;
+  font-size: 8px;
+  font-size: 0.5rem;
+  font-weight: lighter;
+  letter-spacing: 11.2px;
+  letter-spacing: 0.7rem;
+  text-align: center;
+  animation: fade-in 0.5s ease-out 0s forwards, 
+          going-down 0.5s ease-out 0s forwards;
+  opacity: 0;
+}
+.calc-bar > .calc {
+  position: absolute;
+  top: 0; left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 10px;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#57a0db+1,e577c4+100 */
+  background: #57a0db; /* Old browsers */
+  background: -moz-linear-gradient(left,  #57a0db 1%, #e577c4 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #57a0db 1%,#e577c4 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #57a0db 1%,#e577c4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57a0db', endColorstr='#e577c4',GradientType=1 ); /* IE6-9 */
+  animation: working 5.5s 2s forwards;
+}
+.wait {
+  padding-bottom: 10px;
+  font-size: 27.2px;
+  font-size: 1.7rem;
+  font-weight: lighter;
+  text-align: center;
+  animation: fade-in 0.3s ease-out 0.6s forwards, 
+          going-down 0.3s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+/* media query */
+@media all and (min-width: 486px) {
+  .calc-bar {
+    font-size: 12.8px;
+    font-size: 0.8rem;
+    letter-spacing: 16px;
+    letter-spacing: 1rem;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .calc-bar {
+    margin: 25vh 20vw 30px 20vw;
+    width: 60%;
+    font-size: 17.6px;
+    font-size: 1.1rem;
+    letter-spacing: 20.8px;
+    letter-spacing: 1.3rem;
+  }
+  .wait {
+    font-size: 32px;
+    font-size: 2rem;
+    font-weight: lighter;
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .calc-bar {
+    margin: 25vh 25vw 40px 25vw;
+    width: 50%;
+    font-size: 20.8px;
+    font-size: 1.3rem;
+    letter-spacing: 24px;
+    letter-spacing: 1.5rem;
+  }
+  .wait {
+    font-size: 35.2px;
+    font-size: 2.2rem;
+    font-weight: lighter;
+    text-align: center;
+  }
+}

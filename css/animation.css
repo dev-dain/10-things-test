@@ -1,0 +1,66 @@
+/* animation */
+@-webkit-keyframes start-flicker {
+  0% {background-color: rgba(0, 135, 245, 0.9);}
+  50% {background-color: rgba(0, 135, 245, 0.6);}
+  100% {background-color: rgba(0, 135, 245, 0.9);}
+}
+@keyframes start-flicker {
+  0% {background-color: rgba(0, 135, 245, 0.9);}
+  50% {background-color: rgba(0, 135, 245, 0.6);}
+  100% {background-color: rgba(0, 135, 245, 0.9);}
+}
+@-webkit-keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@-webkit-keyframes fade-out {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+@keyframes fade-out {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+@-webkit-keyframes going-up {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-10px);}
+}
+@keyframes going-up {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-10px);}
+}
+@-webkit-keyframes going-down {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(10px);}
+}
+@keyframes going-down {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(10px);}
+}
+@-webkit-keyframes going-left {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-10px);}
+}
+@keyframes going-left {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-10px);}
+}
+@-webkit-keyframes working {
+  0% {width: 0%;}
+  50% {width: 40%;}
+  100% {width: 100%;}
+}
+@keyframes working {
+  0% {width: 0%;}
+  50% {width: 40%;}
+  100% {width: 100%;}
+}
+
+/* animation class */
+.fade-out-5-4 {
+  animation: fade-out 0.5s 0.4s;
+}
